@@ -12,16 +12,15 @@ function calculateGrade(mark) {
     }
 }
 
-function main() {
-    const input = prompt("Enter the student's mark (0-100):");
-    const mark = parseFloat(input);
+function calculateAndDisplayGrade() {
+    const markInput = document.getElementById('mark').value;
+    const mark = parseFloat(markInput);
 
-    if (mark >= 0 && mark <= 100) {
+    if (!isNaN(mark) && mark >= 0 && mark <= 100) {
         const grade = calculateGrade(mark);
-        alert("Grade: " + grade);
+        document.getElementById('result').textContent = "Grade: " + grade;
     } else {
-        alert("Please enter a valid mark between 0 and 100.");
+        document.getElementById('result').textContent = "Please enter a Marks between 0 and 100.";
     }
 }
 
-main();
